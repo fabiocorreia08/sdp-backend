@@ -16,14 +16,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 //@Audited
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "FUNCAO")
 public class Funcao implements Serializable {
@@ -56,5 +50,53 @@ public class Funcao implements Serializable {
 	@Enumerated(EnumType.STRING)
     @Column(name = "TX_NIVEL_FUNCAO_INTERNACIONAL", nullable = true, length = 2)   
 	private NivelFuncaoInternacionalEnum nivelFuncaoInternacional;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public TipoFuncaoEnum getTipoFuncao() {
+		return tipoFuncao;
+	}
+
+	public void setTipoFuncao(TipoFuncaoEnum tipoFuncao) {
+		this.tipoFuncao = tipoFuncao;
+	}
+
+	public GrupoFuncao getGrupoFuncaoNacional() {
+		return grupoFuncaoNacional;
+	}
+
+	public void setGrupoFuncaoNacional(GrupoFuncao grupoFuncaoNacional) {
+		this.grupoFuncaoNacional = grupoFuncaoNacional;
+	}
+
+	public GrupoFuncao getGrupoFuncaoInternacional() {
+		return grupoFuncaoInternacional;
+	}
+
+	public void setGrupoFuncaoInternacional(GrupoFuncao grupoFuncaoInternacional) {
+		this.grupoFuncaoInternacional = grupoFuncaoInternacional;
+	}
+
+	public NivelFuncaoNacionalEnum getNivelFuncaoNacional() {
+		return nivelFuncaoNacional;
+	}
+
+	public void setNivelFuncaoNacional(NivelFuncaoNacionalEnum nivelFuncaoNacional) {
+		this.nivelFuncaoNacional = nivelFuncaoNacional;
+	}
+
+	public NivelFuncaoInternacionalEnum getNivelFuncaoInternacional() {
+		return nivelFuncaoInternacional;
+	}
+
+	public void setNivelFuncaoInternacional(NivelFuncaoInternacionalEnum nivelFuncaoInternacional) {
+		this.nivelFuncaoInternacional = nivelFuncaoInternacional;
+	}
 	
 }

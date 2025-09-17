@@ -20,4 +20,11 @@ public class GrupoFuncao implements Serializable {
 	@Column(name = "ID_GRUPO_FUNCAO", unique = true, nullable = false, length = 5)
 	private Long id;
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 }
