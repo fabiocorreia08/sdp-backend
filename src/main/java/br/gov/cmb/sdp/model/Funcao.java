@@ -2,8 +2,8 @@ package br.gov.cmb.sdp.model;
 
 import java.io.Serializable;
 
-import br.gov.cmb.sdp.enuns.NivelFuncaoInternacionalEnum;
-import br.gov.cmb.sdp.enuns.NivelFuncaoNacionalEnum;
+import br.gov.cmb.sdp.enuns.NivelFuncaoIntEnum;
+import br.gov.cmb.sdp.enuns.NivelFuncaoNacEnum;
 import br.gov.cmb.sdp.enuns.TipoFuncaoEnum;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -34,22 +34,22 @@ public class Funcao implements Serializable {
 	private TipoFuncaoEnum tipoFuncao;
 	
 	//@Audited(targetAuditMode = RelationTargetAuditMode.NOT_AUDITED)
-	@ManyToOne(targetEntity = GrupoFuncao.class, cascade = CascadeType.ALL)    
-    @JoinColumn(name = "ID_GRUPO_FUNCAO_NACIONAL", nullable = true, insertable = true, updatable = true)    
-	private GrupoFuncao grupoFuncaoNacional;
+	@ManyToOne(targetEntity = GrupoFuncao.class)    
+    @JoinColumn(name = "ID_GRUPO_FUNCAO_NAC", nullable = true, insertable = true, updatable = true)    
+	private GrupoFuncao grupoFuncaoNac;
 	
 	//@Audited(targetAuditMode = RelationTargetAuditMode.NOT_AUDITED)
-	@ManyToOne(targetEntity = GrupoFuncao.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "ID_GRUPO_FUNCAO_INTERNACIONAL", nullable = true, insertable = true, updatable = true)
-	private GrupoFuncao grupoFuncaoInternacional;
+	@ManyToOne(targetEntity = GrupoFuncao.class)    
+	@JoinColumn(name = "ID_GRUPO_FUNCAO_INT", nullable = true, insertable = true, updatable = true)    
+	private GrupoFuncao grupoFuncaoInt;
+		
+	@Enumerated(EnumType.STRING)
+    @Column(name = "TX_NIVEL_FUNCAO_NAC", nullable = true, length = 2)    
+	private NivelFuncaoNacEnum nivelFuncaoNac;
 	
 	@Enumerated(EnumType.STRING)
-    @Column(name = "TX_NIVEL_FUNCAO_NACIONAL", nullable = true, length = 2)    
-	private NivelFuncaoNacionalEnum nivelFuncaoNacional;
-	
-	@Enumerated(EnumType.STRING)
-    @Column(name = "TX_NIVEL_FUNCAO_INTERNACIONAL", nullable = true, length = 2)   
-	private NivelFuncaoInternacionalEnum nivelFuncaoInternacional;
+    @Column(name = "TX_NIVEL_FUNCAO_INT", nullable = true, length = 2)   
+	private NivelFuncaoIntEnum nivelFuncaoInt;
 
 	public Long getId() {
 		return id;
@@ -65,38 +65,38 @@ public class Funcao implements Serializable {
 
 	public void setTipoFuncao(TipoFuncaoEnum tipoFuncao) {
 		this.tipoFuncao = tipoFuncao;
+	}		
+
+	public GrupoFuncao getGrupoFuncaoNac() {
+		return grupoFuncaoNac;
 	}
 
-	public GrupoFuncao getGrupoFuncaoNacional() {
-		return grupoFuncaoNacional;
+	public void setGrupoFuncaoNac(GrupoFuncao grupoFuncaoNac) {
+		this.grupoFuncaoNac = grupoFuncaoNac;
 	}
 
-	public void setGrupoFuncaoNacional(GrupoFuncao grupoFuncaoNacional) {
-		this.grupoFuncaoNacional = grupoFuncaoNacional;
+	public GrupoFuncao getGrupoFuncaoInt() {
+		return grupoFuncaoInt;
 	}
 
-	public GrupoFuncao getGrupoFuncaoInternacional() {
-		return grupoFuncaoInternacional;
+	public void setGrupoFuncaoInt(GrupoFuncao grupoFuncaoInt) {
+		this.grupoFuncaoInt = grupoFuncaoInt;
 	}
 
-	public void setGrupoFuncaoInternacional(GrupoFuncao grupoFuncaoInternacional) {
-		this.grupoFuncaoInternacional = grupoFuncaoInternacional;
+	public NivelFuncaoNacEnum getNivelFuncaoNac() {
+		return nivelFuncaoNac;
 	}
 
-	public NivelFuncaoNacionalEnum getNivelFuncaoNacional() {
-		return nivelFuncaoNacional;
+	public void setNivelFuncaoNac(NivelFuncaoNacEnum nivelFuncaoNac) {
+		this.nivelFuncaoNac = nivelFuncaoNac;
 	}
 
-	public void setNivelFuncaoNacional(NivelFuncaoNacionalEnum nivelFuncaoNacional) {
-		this.nivelFuncaoNacional = nivelFuncaoNacional;
+	public NivelFuncaoIntEnum getNivelFuncaoInt() {
+		return nivelFuncaoInt;
 	}
 
-	public NivelFuncaoInternacionalEnum getNivelFuncaoInternacional() {
-		return nivelFuncaoInternacional;
-	}
-
-	public void setNivelFuncaoInternacional(NivelFuncaoInternacionalEnum nivelFuncaoInternacional) {
-		this.nivelFuncaoInternacional = nivelFuncaoInternacional;
+	public void setNivelFuncaoInt(NivelFuncaoIntEnum nivelFuncaoInt) {
+		this.nivelFuncaoInt = nivelFuncaoInt;
 	}
 	
 }

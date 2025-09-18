@@ -35,14 +35,14 @@ public class FuncaoController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @PostMapping
-    public Funcao salvar(@RequestBody Funcao product) {
-        return funcaoService.salvar(product);
+    @PostMapping("/salvar")
+    public Funcao salvar(@RequestBody Funcao funcao) {
+    	return funcaoService.salvar(funcao);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Funcao> atualizar(@PathVariable Long id, @RequestBody Funcao productDetails) {
-        return ResponseEntity.ok(funcaoService.atualizar(id, productDetails));
+    public ResponseEntity<Funcao> atualizar(@PathVariable Long id, @RequestBody Funcao funcaoAtualizada) {
+        return ResponseEntity.ok(funcaoService.atualizar(id, funcaoAtualizada));
     }
 
     @DeleteMapping("/{id}")
