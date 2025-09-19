@@ -2,10 +2,9 @@ package br.gov.cmb.sdp.model;
 
 import java.io.Serializable;
 
-import br.gov.cmb.sdp.enuns.NivelFuncaoIntEnum;
-import br.gov.cmb.sdp.enuns.NivelFuncaoNacEnum;
+import br.gov.cmb.sdp.enuns.NivelFuncaoInternacionalEnum;
+import br.gov.cmb.sdp.enuns.NivelFuncaoNacionalEnum;
 import br.gov.cmb.sdp.enuns.TipoFuncaoEnum;
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -45,11 +44,11 @@ public class Funcao implements Serializable {
 		
 	@Enumerated(EnumType.STRING)
     @Column(name = "TX_NIVEL_FUNCAO_NAC", nullable = true, length = 2)    
-	private NivelFuncaoNacEnum nivelFuncaoNac;
+	private NivelFuncaoNacionalEnum nivelFuncaoNac;
 	
 	@Enumerated(EnumType.STRING)
     @Column(name = "TX_NIVEL_FUNCAO_INT", nullable = true, length = 2)   
-	private NivelFuncaoIntEnum nivelFuncaoInt;
+	private NivelFuncaoInternacionalEnum nivelFuncaoInt;
 
 	public Long getId() {
 		return id;
@@ -83,19 +82,19 @@ public class Funcao implements Serializable {
 		this.grupoFuncaoInt = grupoFuncaoInt;
 	}
 
-	public NivelFuncaoNacEnum getNivelFuncaoNac() {
+	public NivelFuncaoNacionalEnum getNivelFuncaoNac() {
 		return nivelFuncaoNac;
 	}
 
-	public void setNivelFuncaoNac(NivelFuncaoNacEnum nivelFuncaoNac) {
+	public void setNivelFuncaoNac(NivelFuncaoNacionalEnum nivelFuncaoNac) {
 		this.nivelFuncaoNac = nivelFuncaoNac;
 	}
 
-	public NivelFuncaoIntEnum getNivelFuncaoInt() {
+	public NivelFuncaoInternacionalEnum getNivelFuncaoInt() {
 		return nivelFuncaoInt;
 	}
 
-	public void setNivelFuncaoInt(NivelFuncaoIntEnum nivelFuncaoInt) {
+	public void setNivelFuncaoInt(NivelFuncaoInternacionalEnum nivelFuncaoInt) {
 		this.nivelFuncaoInt = nivelFuncaoInt;
 	}
 	

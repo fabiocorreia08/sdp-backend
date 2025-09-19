@@ -1,6 +1,6 @@
 package br.gov.cmb.sdp.enuns;
 
-public enum NivelFuncaoNacEnum {
+public enum NivelFuncaoNacionalEnum {
 
 	N1("N1", "Primeiro Nível"), N2("N2", "Segundo Nível/Consultor Sênior"),
 	N3("N3", "Terceiro Nével/Técnico Especialista/Consultor"), N0("N0", "Presidente/Diretores/Membros dos Conselhos");
@@ -8,10 +8,10 @@ public enum NivelFuncaoNacEnum {
 	private String codigo;
 	private String descricao;
 
-	NivelFuncaoNacEnum() {
+	NivelFuncaoNacionalEnum() {
 	}
 
-	NivelFuncaoNacEnum(String codigo, String descricao) {
+	NivelFuncaoNacionalEnum(String codigo, String descricao) {
 		this.codigo = codigo;
 		this.descricao = descricao;
 	}

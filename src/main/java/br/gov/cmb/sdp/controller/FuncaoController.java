@@ -3,7 +3,6 @@ package br.gov.cmb.sdp.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,42 +12,39 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.gov.cmb.sdp.model.Funcao;
+import br.gov.cmb.sdp.dto.FuncaoDTO;
 import br.gov.cmb.sdp.service.FuncaoService;
 
 @RestController
-@RequestMapping("/api/funcoes")
+@RequestMapping("/api/funcao")
 public class FuncaoController {
 
 	@Autowired
-    private FuncaoService funcaoService;
+	private FuncaoService service;
 
     @GetMapping
-    public List<Funcao> buscarTodos() {
-        return funcaoService.buscarTodos();
+    public List<FuncaoDTO> listar() {
+        return service.buscarTodos();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Funcao> buscarPorId(@PathVariable Long id) {
-        return funcaoService.buscarPorId(id)
-                .map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.notFound().build());
+    public FuncaoDTO buscarPorId(@PathVariable Long id) {
+        return service.buscarPorId(id);
     }
 
-    @PostMapping("/salvar")
-    public Funcao salvar(@RequestBody Funcao funcao) {
-    	return funcaoService.salvar(funcao);
+    @PostMapping
+    public FuncaoDTO salvar(@RequestBody FuncaoDTO dto) throws Exception {
+        return service.salvar(dto);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Funcao> atualizar(@PathVariable Long id, @RequestBody Funcao funcaoAtualizada) {
-        return ResponseEntity.ok(funcaoService.atualizar(id, funcaoAtualizada));
+    public FuncaoDTO atualizar(@PathVariable Long id, @RequestBody FuncaoDTO dto) {
+        return service.atualizar(id, dto);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Funcao> deletar(@PathVariable Long id) {
-    	funcaoService.deletar(id);
-        return ResponseEntity.noContent().build();
+    public void deletar(@PathVariable Long id) {
+        service.deletar(id);
     }
 
 }

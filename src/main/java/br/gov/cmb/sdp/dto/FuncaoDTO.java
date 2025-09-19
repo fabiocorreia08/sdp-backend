@@ -1,56 +1,52 @@
 package br.gov.cmb.sdp.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+import br.gov.cmb.sdp.enuns.NivelFuncaoInternacionalEnum;
+import br.gov.cmb.sdp.enuns.NivelFuncaoNacionalEnum;
+import br.gov.cmb.sdp.enuns.TipoFuncaoEnum;
 
 public class FuncaoDTO {
 	
-	private Long id;	
-	private String tipoFuncao;
-	private String grupoFuncaoNacional;
-	private String grupoFuncaoInternacional;
-	private String nivelFuncaoNacional;
-	private String nivelFuncaoInternacional;
-	
+	private Long id;
+	private TipoFuncaoEnum tipoFuncao;
+	private Long idGrupoFuncaoNac;
+	private Long idGrupoFuncaoInt;
+	private NivelFuncaoNacionalEnum nivelFuncaoNac;
+	private NivelFuncaoInternacionalEnum nivelFuncaoInt;
+		
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getTipoFuncao() {
+	public TipoFuncaoEnum getTipoFuncao() {
 		return tipoFuncao;
 	}
-	public void setTipoFuncao(String tipoFuncao) {
+	public void setTipoFuncao(TipoFuncaoEnum tipoFuncao) {
 		this.tipoFuncao = tipoFuncao;
 	}
-	public String getGrupoFuncaoNacional() {
-		return grupoFuncaoNacional;
+	public Long getIdGrupoFuncaoNac() {
+		return idGrupoFuncaoNac;
 	}
-	public void setGrupoFuncaoNacional(String grupoFuncaoNacional) {
-		this.grupoFuncaoNacional = grupoFuncaoNacional;
+	public void setIdGrupoFuncaoNac(Long idGrupoFuncaoNac) {
+		this.idGrupoFuncaoNac = idGrupoFuncaoNac;
 	}
-	public String getGrupoFuncaoInternacional() {
-		return grupoFuncaoInternacional;
+	public Long getIdGrupoFuncaoInt() {
+		return idGrupoFuncaoInt;
 	}
-	public void setGrupoFuncaoInternacional(String grupoFuncaoInternacional) {
-		this.grupoFuncaoInternacional = grupoFuncaoInternacional;
+	public void setIdGrupoFuncaoInt(Long idGrupoFuncaoInt) {
+		this.idGrupoFuncaoInt = idGrupoFuncaoInt;
 	}
-	public String getNivelFuncaoNacional() {
-		return nivelFuncaoNacional;
+	public NivelFuncaoNacionalEnum getNivelFuncaoNac() {
+		return nivelFuncaoNac;
 	}
-	public void setNivelFuncaoNacional(String nivelFuncaoNacional) {
-		this.nivelFuncaoNacional = nivelFuncaoNacional;
+	public void setNivelFuncaoNac(NivelFuncaoNacionalEnum nivelFuncaoNac) {
+		this.nivelFuncaoNac = nivelFuncaoNac;
 	}
-	public String getNivelFuncaoInternacional() {
-		return nivelFuncaoInternacional;
+	public NivelFuncaoInternacionalEnum getNivelFuncaoInt() {
+		return nivelFuncaoInt;
 	}
-	public void setNivelFuncaoInternacional(String nivelFuncaoInternacional) {
-		this.nivelFuncaoInternacional = nivelFuncaoInternacional;
+	public void setNivelFuncaoInt(NivelFuncaoInternacionalEnum nivelFuncaoInt) {
+		this.nivelFuncaoInt = nivelFuncaoInt;
 	}
 }
