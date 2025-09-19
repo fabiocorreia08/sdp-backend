@@ -4,7 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import br.gov.cmb.sdp.dto.GrupoFuncaoDTO;
-import br.gov.cmb.sdp.model.GrupoFuncao;
+import br.gov.cmb.sdp.entity.GrupoFuncao;
 import br.gov.cmb.sdp.repository.GrupoFuncaoRepository;
 
 @Service

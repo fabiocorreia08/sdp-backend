@@ -1,6 +1,7 @@
 package br.gov.cmb.sdp.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.gov.cmb.sdp.dto.FuncaoDTO;
+import br.gov.cmb.sdp.enuns.TipoFuncaoEnum;
 import br.gov.cmb.sdp.service.FuncaoService;
 
 @RestController
@@ -32,6 +34,11 @@ public class FuncaoController {
         return service.buscarPorId(id);
     }
 
+    @GetMapping("/tipo-funcao/{tipoFuncao}")
+    public Optional<FuncaoDTO> buscarPorTipoFuncao(@PathVariable TipoFuncaoEnum tipoFuncao) {
+        return service.buscarPorTipoFuncao(tipoFuncao);
+    }
+    
     @PostMapping
     public FuncaoDTO salvar(@RequestBody FuncaoDTO dto) throws Exception {
         return service.salvar(dto);

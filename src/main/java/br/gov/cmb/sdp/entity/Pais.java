@@ -1,4 +1,4 @@
-package br.gov.cmb.sdp.model;
+package br.gov.cmb.sdp.entity;
 
 import java.io.Serializable;
 

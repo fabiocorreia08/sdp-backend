@@ -1,6 +1,8 @@
-package br.gov.cmb.sdp.model;
+package br.gov.cmb.sdp.entity;
 
 import java.io.Serializable;
+
+import org.hibernate.envers.Audited;
 
 import br.gov.cmb.sdp.enuns.TipoGrupoFuncaoEnum;
 import jakarta.persistence.Column;
@@ -14,6 +16,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "GRUPO_FUNCAO")
+@Audited
 public class GrupoFuncao implements Serializable {
 
 	private static final long serialVersionUID = 1L;

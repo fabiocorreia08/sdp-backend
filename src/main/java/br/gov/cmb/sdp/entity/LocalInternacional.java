@@ -1,4 +1,4 @@
-package br.gov.cmb.sdp.model;
+package br.gov.cmb.sdp.entity;
 
 import java.io.Serializable;
 
@@ -13,19 +13,19 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "LOCAL_INT")
+@Table(name = "LOCAL_INTERNACIONAL")
 public class LocalInternacional implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ID_LOCAL_INT", nullable = false, unique = true, length = 5)
+	@Column(name = "ID_LOCAL_INTERNACIONAL", nullable = false, unique = true, length = 5)
 	private Long id;
 
 	@ManyToOne(targetEntity = GrupoLocalInternacional.class, cascade = CascadeType.ALL)	
 	@JoinColumn(name = "ID_GRUPO_LOCALINT", nullable = true, insertable = true, updatable = true)
-	private GrupoLocalInternacional grupoLocalInt;
+	private GrupoLocalInternacional grupoLocalInternacional;
 
 	@ManyToOne(targetEntity = Pais.class, cascade = CascadeType.ALL)
 	@JoinColumn(name = "ID_PAIS", nullable = true)	

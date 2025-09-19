@@ -8,10 +8,10 @@ public class FuncaoDTO {
 	
 	private Long id;
 	private TipoFuncaoEnum tipoFuncao;
-	private Long idGrupoFuncaoNac;
-	private Long idGrupoFuncaoInt;
-	private NivelFuncaoNacionalEnum nivelFuncaoNac;
-	private NivelFuncaoInternacionalEnum nivelFuncaoInt;
+	private Long idGrupoFuncaoNacional;
+	private Long idGrupoFuncaoInternacional;
+	private NivelFuncaoNacionalEnum nivelFuncaoNacional;
+	private NivelFuncaoInternacionalEnum nivelFuncaoInternacional;
 		
 	public Long getId() {
 		return id;
@@ -25,28 +25,28 @@ public class FuncaoDTO {
 	public void setTipoFuncao(TipoFuncaoEnum tipoFuncao) {
 		this.tipoFuncao = tipoFuncao;
 	}
-	public Long getIdGrupoFuncaoNac() {
-		return idGrupoFuncaoNac;
+	public Long getIdGrupoFuncaoNacional() {
+		return idGrupoFuncaoNacional;
 	}
-	public void setIdGrupoFuncaoNac(Long idGrupoFuncaoNac) {
-		this.idGrupoFuncaoNac = idGrupoFuncaoNac;
+	public void setIdGrupoFuncaoNacional(Long idGrupoFuncaoNacional) {
+		this.idGrupoFuncaoNacional = idGrupoFuncaoNacional;
 	}
-	public Long getIdGrupoFuncaoInt() {
-		return idGrupoFuncaoInt;
+	public Long getIdGrupoFuncaoInternacional() {
+		return idGrupoFuncaoInternacional;
 	}
-	public void setIdGrupoFuncaoInt(Long idGrupoFuncaoInt) {
-		this.idGrupoFuncaoInt = idGrupoFuncaoInt;
+	public void setIdGrupoFuncaoInternacional(Long idGrupoFuncaoInternacional) {
+		this.idGrupoFuncaoInternacional = idGrupoFuncaoInternacional;
 	}
-	public NivelFuncaoNacionalEnum getNivelFuncaoNac() {
-		return nivelFuncaoNac;
+	public NivelFuncaoNacionalEnum getNivelFuncaoNacional() {
+		return nivelFuncaoNacional;
 	}
-	public void setNivelFuncaoNac(NivelFuncaoNacionalEnum nivelFuncaoNac) {
-		this.nivelFuncaoNac = nivelFuncaoNac;
+	public void setNivelFuncaoNacional(NivelFuncaoNacionalEnum nivelFuncaoNacional) {
+		this.nivelFuncaoNacional = nivelFuncaoNacional;
 	}
-	public NivelFuncaoInternacionalEnum getNivelFuncaoInt() {
-		return nivelFuncaoInt;
+	public NivelFuncaoInternacionalEnum getNivelFuncaoInternacional() {
+		return nivelFuncaoInternacional;
 	}
-	public void setNivelFuncaoInt(NivelFuncaoInternacionalEnum nivelFuncaoInt) {
-		this.nivelFuncaoInt = nivelFuncaoInt;
-	}
+	public void setNivelFuncaoInternacional(NivelFuncaoInternacionalEnum nivelFuncaoInternacional) {
+		this.nivelFuncaoInternacional = nivelFuncaoInternacional;
+	}	
 }

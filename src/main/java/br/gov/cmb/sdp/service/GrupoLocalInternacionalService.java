@@ -4,7 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import br.gov.cmb.sdp.dto.GrupoLocalInternacionalDTO;
-import br.gov.cmb.sdp.model.GrupoLocalInternacional;
+import br.gov.cmb.sdp.entity.GrupoLocalInternacional;
 import br.gov.cmb.sdp.repository.GrupoLocalInternacionalRepository;
 
 @Service
